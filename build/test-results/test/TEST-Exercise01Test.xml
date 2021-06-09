@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Exercise01Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-09T02:18:06" hostname="ntnghia0320" time="0.16">
+<testsuite name="Exercise01Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-06-09T05:55:02" hostname="ntnghia0320" time="0.098">
   <properties/>
-  <testcase name="test_gcd()" classname="Exercise01Test" time="0.153"/>
+  <testcase name="test_gcd()" classname="Exercise01Test" time="0.094"/>
   <testcase name="test_lcm()" classname="Exercise01Test" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
