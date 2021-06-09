@@ -1,23 +1,10 @@
-public class Exercise01 {
-    public int gcd(int n, int m){
-
-        int tmp = 0;
-
-        if(n < m) {
-            n = m + n;
-            m = n - m;
-            n = n - m;
+public class Exercise02 {
+    public int tongCacChuSo(int n){
+        int sum = 0;
+        while(n >= 1){
+            sum += n%10;
+            n = n/10;
         }
-        while(m != 0) {
-            tmp = n%m;
-            n = m;
-            m = tmp;
-        }
-
-        return n;
-    }
-
-    public int lcm(int n, int m){
-        return n*m/gcd(n, m);
+        return sum;
     }
 }

@@ -2,18 +2,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Exercise01Test {
+public class Exercise02Test {
 
-    Exercise01 exercise01 = new Exercise01();
+    Exercise02 exercise02 = new Exercise02();
     @Test
-    public void test_gcd(){
-        assertEquals(exercise01.gcd(2, 8), 2);
-        assertEquals(exercise01.gcd(12, 8), 4);
-    }
-
-    @Test
-    public void test_lcm(){
-        assertEquals(exercise01.lcm(2,8), 8);
-        assertEquals(exercise01.lcm(12,8), 24);
+    public void test_tongCacChuSo() {
+        assertEquals(exercise02.tongCacChuSo(8), 8);
+        assertEquals(exercise02.tongCacChuSo(81), 9);
+        assertEquals(exercise02.tongCacChuSo(8291), 20);
+        assertEquals(exercise02.tongCacChuSo(1091), 11);
     }
 }
