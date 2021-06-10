@@ -1,16 +1,16 @@
 public class Exercise08 {
-    public float calculatePi(){
-        float E = 0.0001f;
-        float e = 1, sum = 0.0f;
+    public double calculatePi(){
+        final double E = 0.0001;
+        double e = 1, sum = 0.0;
         int n = 0;
         
         while(e > E){
-            e = 1.0f / (2 * n + 1);
-
             if(n % 2 == 0)
-                sum += e;
+                sum += 1.0 / (2 * n + 1);
             else
-                sum -= e;
+                sum -= 1.0 / (2 * n + 1);
+
+            e = Math.abs(sum * 4 - 3.1415);
 
             n++;
         }
