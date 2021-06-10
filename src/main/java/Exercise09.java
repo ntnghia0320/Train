@@ -1,17 +1,15 @@
 public class Exercise09 {
     public double calculatePi(){
-        double E = 0.00001;
-        double e = 1, sum = 0.00000;
+        double e = 1, sum = 0.0;
         int n = 2;
 
-        while(e > E){
-            e = 1.0 / (n * (n + 1) * (n + 2));
-
+        while(e > 0.00001){
             if(n % 4 == 0)
-                sum -= e;
+                sum -= 1.0 / (n * (n + 1) * (n + 2));
             else
-                sum += e;
+                sum += 1.0 / (n * (n + 1) * (n + 2));
 
+            e = Math.abs(3 + sum * 4 - 3.14159);
             n += 2;
         }
 
