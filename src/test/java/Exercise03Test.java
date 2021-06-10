@@ -8,5 +8,4 @@ public class Exercise03Test {
         assertEquals(exercise03.phanTichThuaSoNguyenTo(5).toString(), "5");
         assertEquals(exercise03.phanTichThuaSoNguyenTo(999).toString(), "3 * 3 * 3 * 37");
     }
-
 }
