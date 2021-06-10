@@ -1,14 +1,9 @@
 public class Exercise01 {
     public int gcd(int n, int m) {
 
-        int tmp = 0;
-
-        if (n < m) {
-            n = m + n;
-            m = n - m;
-            n = n - m;
-        }
+        if (n < m) return gcd(m, n);
         while (m != 0) {
+            int tmp = 0;
             tmp = n % m;
             n = m;
             m = tmp;
@@ -18,6 +13,6 @@ public class Exercise01 {
     }
 
     public int lcm(int n, int m){
-        return n*m/gcd(n, m);
+        return n * m / gcd(n, m);
     }
 }
