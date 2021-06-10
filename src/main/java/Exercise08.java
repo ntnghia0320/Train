@@ -1,10 +1,9 @@
 public class Exercise08 {
     public double calculatePi(){
-        final double E = 0.0001;
         double e = 1, sum = 0.0;
         int n = 0;
         
-        while(e > E){
+        while(e > 0.0001){
             if(n % 2 == 0)
                 sum += 1.0 / (2 * n + 1);
             else
