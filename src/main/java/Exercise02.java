@@ -1,10 +1,5 @@
 public class Exercise02 {
     public int tongCacChuSo(int n){
-        int sum = 0;
-        while(n >= 1){
-            sum += n%10;
-            n = n/10;
-        }
-        return sum;
+        return n > 0 ? tongCacChuSo(n / 10) + n % 10: 0;
     }
 }
