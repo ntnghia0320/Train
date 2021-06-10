@@ -5,7 +5,7 @@ public class Exercise06Test {
 
     Exercise06 exercise06 = new Exercise06();
     @Test
-    public void test_tongCacChuSo() {
+    public void test_tongDaySo() {
         assertEquals(exercise06.tongDaySo(3), 20);
         assertEquals(exercise06.tongDaySo(5), 70);
     }
