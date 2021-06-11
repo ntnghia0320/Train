@@ -1,10 +1,12 @@
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Exercise11Test{
+public class Exercise11Test {
     Exercise11 exercise11 = new Exercise11();
+
     @Test
-    public void test_findMonth(){
+    public void test_findMonth() {
         assertEquals(exercise11.findMonth(1), "January");
         assertEquals(exercise11.findMonth(2), "February");
         assertEquals(exercise11.findMonth(3), "March");
