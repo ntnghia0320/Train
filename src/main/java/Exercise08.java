@@ -17,11 +17,6 @@ public class Exercise08 {
         
         sum *= 4;
 
-<<<<<<< HEAD
-        sum *= 4;
-
-=======
->>>>>>> b4fdb9d67c6151c1a7aceca4b2eaa008cb406bf6
         return sum;
     }
 }
