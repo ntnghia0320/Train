@@ -1,6 +1,7 @@
 public class Exercise08 {
     public double calculatePi(){
-        double e = 1, sum = 0.0;
+        double e = 1;
+        double sum = 0.0;
         int n = 0;
         
         while(e > 0.0001){
@@ -13,7 +14,9 @@ public class Exercise08 {
 
             n++;
         }
+        
+        sum *= 4;
 
-        return sum * 4;
+        return sum;
     }
 }
