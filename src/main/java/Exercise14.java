@@ -25,7 +25,7 @@ public class Exercise14 {
             }
         }
 
-        String result = String.join(" ", listNumberCorrect)
+        String result = String.join(" ", listNumberCorrect);
 
         return result;
     }
