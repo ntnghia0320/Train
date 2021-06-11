@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Exercise18 {
-    private static final Map<Character,
+    public static final Map<Character,
                             Integer> roman = new HashMap<Character,
                                                         Integer>()
     {{
