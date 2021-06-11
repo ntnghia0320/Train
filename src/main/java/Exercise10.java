@@ -7,10 +7,9 @@ public class Exercise10{
         SimpleDateFormat formatDay = new SimpleDateFormat("yyyy MM dd");
         String input = year + " " + month + " " + day;
         Date date;
+        date = formatDay.parse(input);
+        String dayFound = String.format("%tA", date);
 
-            date = formatDay.parse(input);
-            String xDay = String.format("%tA", date);
-
-            return xDay;
+        return dayFound;
     }
 }
