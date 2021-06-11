@@ -1,21 +1,35 @@
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Exercise18 {
-    public int translateRomanNumber(String romanNumber){
-        ArrayList<String> result = new ArrayList<>();
-        int[] myNum = {0, 0, 0, 0};
-        int number = 0;
+    private static final Map<Character,
+                            Integer> roman = new HashMap<Character,
+                                                        Integer>()
+    {{
+        put('I', 1);
+        put('V', 5);
+        put('X', 10);
+        put('L', 50);
+        put('C', 100);
+        put('D', 500);
+        put('M', 1000);
+    }};
 
-        char[] ch = romanNumber.toCharArray();
+    public int translateRomanNumber(String romanNumber) {
+        int sum = 0;
+        int n = romanNumber.length();
 
-        for (char c : ch) {
-            if(c == 'M'){
-                number += 1000;
-            } else if(c == 'C'){
-                flag = 100;
+        for (int i = 0; i < n; i++) {
+            if (i != n - 1 && roman.get(romanNumber.charAt(i)) <
+                    roman.get(romanNumber.charAt(i + 1))) {
+                sum += roman.get(romanNumber.charAt(i + 1)) -
+                        roman.get(romanNumber.charAt(i));
+                i++;
+            } else {
+                sum += roman.get(romanNumber.charAt(i));
             }
         }
 
-        return 0;
+        return sum;
     }
 }
