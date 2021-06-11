@@ -1,6 +1,6 @@
 public class Exercise09 {
     public double calculatePi(){
-        double e = 1, sum = 0.0;
+        double e = 1.0, sum = 0.0;
         int n = 2;
 
         while(e > 0.00001){
