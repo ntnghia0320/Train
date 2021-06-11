@@ -19,7 +19,7 @@ public class Exercise14 {
             }
 
             if(sum == n){
-                listNumberCorrect.add(String.valueOf(sum));
+                listNumberCorrect.add(String.valueOf(n));
             }
         }
 
