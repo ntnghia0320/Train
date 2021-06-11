@@ -1,6 +1,7 @@
 public class Exercise12 {
+    public static final double E = 0.0001;
+
     public double sqrt(int a) {
-        final double E = 0.0001;
         double fn = a;
 
         while (fn * fn - a > E)
