@@ -2,6 +2,7 @@ public class Exercise08 {
     public double calculatePi(){
         double e = 1.0;
         double sum = 0.0;
+
         int n = 0;
         
         while(e > 0.0001){
