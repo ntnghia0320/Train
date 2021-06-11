@@ -15,7 +15,7 @@ public class Exercise18 {
         put('M', 1000);
     }};
 
-    public int translateRomanNumber(String romanNumber) {
+    public int romanToInt(String romanNumber) {
         int sum = 0;
         int n = romanNumber.length();
 
