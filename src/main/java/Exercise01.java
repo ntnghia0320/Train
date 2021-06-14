@@ -15,7 +15,7 @@ public class Exercise01 {
         }
 
         for (Integer i : hashMap.keySet()) {
-            if(hashMap.get(i) == 2){
+            if (hashMap.get(i) == 2) {
                 listNumberDouble.add(String.valueOf(i));
             }
         }
