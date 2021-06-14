@@ -12,6 +12,7 @@ public class Exercise02 {
                     indexMax = j;
                 }
             }
+
             sum += max;
             max = 0;
             arrayNumber[indexMax] = 0;
