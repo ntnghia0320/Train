@@ -1,22 +1,11 @@
-import java.util.ArrayList;
 
 public class Exercise15 {
     public int reverseBit(int n) {
-        ArrayList<Byte> listBit = new ArrayList<>();
+        int x = 0;
+        do {
+            x = (x << 1) | (n & 1);
+        } while ((n >>= 1) > 0);
 
-        while (n > 0) {
-            listBit.add((byte) (n % 2));
-            n /= 2;
-        }
-
-        int powNumber = listBit.size() - 1;
-        int result = 0;
-
-        for (Byte i : listBit) {
-            result += i * Math.pow(2, powNumber);
-            powNumber--;
-        }
-
-        return result;
+        return x;
     }
 }
