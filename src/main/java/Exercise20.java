@@ -1,18 +1,16 @@
 public class Exercise20 {
-    public boolean happyNumber(int n) {
-        int sum = n;
 
-        while (sum > 9) {
-            sum = 0;
-
-            while (n > 0) {
-                sum += (n % 10) * (n % 10);
-                n /= 10;
-            }
-
-            n = sum;
+    private int convert(int n){
+        int sum = 0;
+        while (n > 0) {
+            sum += (n % 10) * (n % 10);
+            n /= 10;
         }
+        return sum;
+    }
 
-        return sum == 1;
+    public boolean happyNumber(int n) {
+        while (n > 9) n = convert(n);
+        return n == 1;
     }
 }
