@@ -6,11 +6,10 @@ public class ArrayExercise11 {
 
         for (int i = 0; i < size; i++) {
             maxCurrent += arr[i];
-            if (max < maxCurrent)
-                max = maxCurrent;
-            if (maxCurrent < 0)
-                maxCurrent = 0;
+            if (max < maxCurrent) max = maxCurrent;
+            if (maxCurrent < 0) maxCurrent = 0;
         }
+
         return max;
     }
 }
