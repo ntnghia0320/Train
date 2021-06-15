@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Exercise04 {
+public class ArrayExercise04 {
     public Integer[] sortEvenOdd(Integer[] arr) {
         int n = arr.length;
         int l = 0;
