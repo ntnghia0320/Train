@@ -10,5 +10,6 @@ public class ArrayExercise02Test {
         assertEquals(exercise02.findMaxSum(new int[]{1, 1, 4, 8, 3, 4, 5, 6, 7}), 21);
         assertEquals(exercise02.findMaxSum(new int[]{1, 12, 4, 8, 12, 10, 5, 6, 7}), 34);
         assertEquals(exercise02.findMaxSum(new int[]{1, 21, 4, 8, 10, 4, 9, 6, 7}), 40);
+        assertEquals(exercise02.findMaxSum(new int[]{-1, -21, 4, -8, -10, 4, -9, 6, -7}), 14);
     }
 }
