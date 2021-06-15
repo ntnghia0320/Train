@@ -17,8 +17,6 @@ public class Exercise04 {
                 arr[l] = arr[r];
                 arr[r] = temp;
             }
-            System.out.print(l + " " + r);
-            System.out.print("\n");
         }
 
         if (l == n - 1) l = n;
