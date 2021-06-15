@@ -6,7 +6,7 @@ public class ArrayExercise13Test {
     ArrayExercise13 arrayExercise13 = new ArrayExercise13();
 
     @Test
-    public void test_() {
+    public void test_deleteXY() {
         assertArrayEquals(arrayExercise13.deleteXY(new int[][]{{1, 2, 3},
                                                                {4, 5, 6},
                                                                {7, 8, 9}}, 2, 2),
