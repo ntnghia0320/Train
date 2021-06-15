@@ -7,6 +7,6 @@ public class Exercise17Test {
 
     @Test
     public void test_calculateSqrt() {
-        assertEquals(exercise17.calculateSqrt(3), 1.7321428571428572);
+        assertEquals(exercise17.calculateSqrt(3), 1.73205080, exercise17.E);
     }
 }
