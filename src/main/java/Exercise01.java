@@ -7,22 +7,16 @@ public class Exercise01 {
         ArrayList<String> listNumberDouble = new ArrayList<>();
 
         for (Integer i : arrayBumber) {
-            if (hashMap.get(i) != null) {
-                hashMap.put(i, hashMap.get(i) + 1);
-            } else {
-                hashMap.put(i, 1);
-            }
+            hashMap.merge(i, 1, Integer::sum);
         }
 
         for (Integer i : hashMap.keySet()) {
-            if (hashMap.get(i) == 2) {
+            if (hashMap.get(i) >= 2) {
                 listNumberDouble.add(String.valueOf(i));
             }
         }
 
-        String result = String.join(" ", listNumberDouble);
-
-        return result;
+        return String.join(" ", listNumberDouble);
     }
 
 }
