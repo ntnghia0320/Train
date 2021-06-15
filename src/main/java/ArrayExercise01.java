@@ -6,11 +6,11 @@ public class ArrayExercise01 {
         HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
         ArrayList<String> listNumberDouble = new ArrayList<>();
 
-        for (Integer i : arrayNumber) {
+        for (int i : arrayNumber) {
             hashMap.merge(i, 1, Integer::sum);
         }
 
-        for (Integer i : hashMap.keySet()) {
+        for (int i : hashMap.keySet()) {
             if (hashMap.get(i) >= 2) {
                 listNumberDouble.add(String.valueOf(i));
             }
