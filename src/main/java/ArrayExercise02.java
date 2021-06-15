@@ -1,4 +1,4 @@
-public class Exercise02 {
+public class ArrayExercise02 {
     public int findMaxSum(int[] arrayNumber) {
         int size = arrayNumber.length;
         int max = 0;

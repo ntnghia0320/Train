@@ -2,8 +2,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Exercise02Test {
-    Exercise02 exercise02 = new Exercise02();
+public class ArrayExercise02Test {
+    ArrayExercise02 exercise02 = new ArrayExercise02();
 
     @Test
     public void test_findMaxSum() {
