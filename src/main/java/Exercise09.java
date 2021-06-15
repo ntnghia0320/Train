@@ -9,6 +9,7 @@ public class Exercise09 {
         while (e > E) {
             e = 4.0 / (n * (n + 1) * (n + 2));
             sum += n % 4 == 0 ? -e : e;
+
             n += 2;
         }
 
