@@ -7,6 +7,6 @@ public class Exercise09Test {
 
     @Test
     public void test_calculatePi() {
-        assertEquals(exercise09.calculatePi(), 3.1415975817522517);
+        assertEquals(exercise09.calculatePi(), 3.14159, exercise09.E);
     }
 }
