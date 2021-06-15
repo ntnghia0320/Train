@@ -2,7 +2,7 @@ public class ArrayExercise03 {
     public int findSumEvenMinusSumOdd(int[] arrayNumber) {
         int result = 0;
 
-        for (Integer i : arrayNumber) {
+        for (int i : arrayNumber) {
             result += i % 2 == 0 ? i : -i;
         }
 
