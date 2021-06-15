@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Exercise01 {
-    public String findDoubleNumber(int[] arrayBumber) {
+public class ArrayExercise01 {
+    public String findDoubleNumber(int[] arrayNumber) {
         HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
         ArrayList<String> listNumberDouble = new ArrayList<>();
 
-        for (Integer i : arrayBumber) {
+        for (Integer i : arrayNumber) {
             hashMap.merge(i, 1, Integer::sum);
         }
 

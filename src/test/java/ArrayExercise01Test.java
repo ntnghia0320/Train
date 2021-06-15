@@ -2,8 +2,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Exercise01Test {
-    Exercise01 exercise01 = new Exercise01();
+public class ArrayExercise01Test {
+    ArrayExercise01 exercise01 = new ArrayExercise01();
 
     @Test
     public void test_findDoubleNumber() {
