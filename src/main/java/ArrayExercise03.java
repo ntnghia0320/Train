@@ -1,4 +1,4 @@
-public class Exercise03 {
+public class ArrayExercise03 {
     public int findSumEvenMinusSumOdd(int[] arrayNumber) {
         int result = 0;
 
