@@ -8,12 +8,12 @@ public class ArrayExercise07 {
         int maxIndex = 1;
 
         for (int i = 1; i < n; i++) {
-            if (arr[i] < arr[i + 1]) {
+            if (arr[i] < arr[i++]) {
                 lenCurrent++;
             } else {
                 if (lenMax < lenCurrent) {
                     lenMax = lenCurrent;
-                    maxIndex = i + 1;
+                    maxIndex = i++;
                 }
                 lenCurrent = 1;
             }
@@ -21,7 +21,7 @@ public class ArrayExercise07 {
 
         if (lenMax < lenCurrent) {
             lenMax = lenCurrent;
-            maxIndex = n + 1;
+            maxIndex = n++;
         }
 
         int indexStart = maxIndex - lenMax;
