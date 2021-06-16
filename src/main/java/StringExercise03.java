@@ -8,7 +8,7 @@ public class StringExercise03 {
 
             if (Character.isDigit(ch)) {
                 temp.append(ch);
-            } else if (!temp.isEmpty()) {
+            } else if (temp.length() > 0) {
                 sum += Integer.parseInt(String.valueOf(temp));
                 temp.setLength(0);
             }
