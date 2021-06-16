@@ -14,6 +14,6 @@ public class StringExercise03 {
             }
         }
 
-        return !temp.isEmpty() ? sum + Integer.parseInt(String.valueOf(temp)) : sum;
+        return temp.length() > 0 ? sum + Integer.parseInt(String.valueOf(temp)) : sum;
     }
 }
