@@ -1,0 +1,12 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class StringExercise08Test {
+    StringExercise08 stringExercise08 = new StringExercise08();
+
+    @Test
+    public void test(){
+        assertTrue(stringExercise08.checkBarcode("8938505974194"));
+    }
+}
