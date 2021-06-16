@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Exercise14 {
-    public String findNumber() {
-        ArrayList<String> listNumberCorrect = new ArrayList<>();
+    public String findAngelNumbers() {
+        ArrayList<String> angelNumbers = new ArrayList<>();
 
         for (int n = 10; n <= 99999; n++) {
             int sum = 0;
@@ -21,10 +21,10 @@ public class Exercise14 {
             }
 
             if (sum == n) {
-                listNumberCorrect.add(String.valueOf(n));
+                angelNumbers.add(String.valueOf(n));
             }
         }
 
-        return String.join(" ", listNumberCorrect);
+        return String.join(" ", angelNumbers);
     }
 }
