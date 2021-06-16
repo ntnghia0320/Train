@@ -11,5 +11,6 @@ public class StringExercise04Test {
         assertTrue(stringExercise04.isRepeatString("abcabc"));
         assertTrue(stringExercise04.isRepeatString("abcabcabc"));
         assertFalse(stringExercise04.isRepeatString("abcabcbca"));
+        assertFalse(stringExercise04.isRepeatString("abcabcbcad"));
     }
 }
