@@ -5,15 +5,8 @@ public class Exercise03Test {
 
     @Test
     public void test_phanTichThuaSoNguyenTo(){
-        assertEquals(exercise03.phanTichThuaSoNguyenTo(600).toString(), "2 * 2 * 2 * 3 * 5 * 5");
-        assertEquals(exercise03.phanTichThuaSoNguyenTo(5).toString(), "5");
-        assertEquals(exercise03.phanTichThuaSoNguyenTo(999).toString(), "3 * 3 * 3 * 37");
-    }
-
-    @Test
-    public void test_phanTichThuaSoNguyenTo_NewVer(){
-        assertEquals(exercise03.phanTichThuaSoNguyenTo_NewVer(600), "2 * 2 * 2 * 3 * 5 * 5");
-        assertEquals(exercise03.phanTichThuaSoNguyenTo_NewVer(5), "5");
-        assertEquals(exercise03.phanTichThuaSoNguyenTo_NewVer(999), "3 * 3 * 3 * 37");
+        assertEquals(exercise03.phanTichThuaSoNguyenTo(600), "2 * 2 * 2 * 3 * 5 * 5");
+        assertEquals(exercise03.phanTichThuaSoNguyenTo(5), "5");
+        assertEquals(exercise03.phanTichThuaSoNguyenTo(999), "3 * 3 * 3 * 37");
     }
 }
