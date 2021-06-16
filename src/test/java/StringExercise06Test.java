@@ -8,5 +8,7 @@ public class StringExercise06Test {
     @Test
     public void test_shortcutString(){
         assertEquals(stringExercise06.shortcutString("abcccceeeeeefd"),"abc4e6fd");
+        assertEquals(stringExercise06.shortcutString("abcccceeeeee"),"abc4e6");
+        assertEquals(stringExercise06.shortcutString("abbbbbbbbbbbbbc"),"ab13c");
     }
 }
