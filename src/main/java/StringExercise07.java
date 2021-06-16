@@ -18,7 +18,11 @@ public class StringExercise07 {
                 }
             } else if (tempNumber.length() > 0) {
                 number = Integer.parseInt(String.valueOf(tempNumber));
-                result.append(String.valueOf(charRepeated).repeat(Math.max(0, number)));
+
+                for (int j = 0; j < number; j++) {
+                    result.append(charRepeated);
+                }
+
                 charRepeated = ' ';
                 tempNumber.setLength(0);
             } else {
@@ -28,7 +32,10 @@ public class StringExercise07 {
 
         if (tempNumber.length() > 0) {
             number = Integer.parseInt(String.valueOf(tempNumber));
-            result.append(String.valueOf(charRepeated).repeat(Math.max(0, number)));
+
+            for (int j = 0; j < number; j++) {
+                result.append(charRepeated);
+            }
         } else {
             result.append(str.charAt(n - 1));
         }
