@@ -29,7 +29,7 @@ public class StringExercise04 {
         computeLPSArray(str, n, lps);
 
         int len = lps[n - 1];
-        System.out.println(len +" "+n);
+
         return len > 0 && n % (n - len) == 0;
     }
 }
