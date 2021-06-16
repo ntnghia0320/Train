@@ -9,6 +9,6 @@ public class StringExercise08Test {
     @Test
     public void test(){
         assertTrue(stringExercise08.checkBarcode("8938505974194"));
-        assertFalse(stringExercise08.checkBarcode("8938505974194"));
+        assertFalse(stringExercise08.checkBarcode("8938505974190"));
     }
 }
