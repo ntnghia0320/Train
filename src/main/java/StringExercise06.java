@@ -16,6 +16,6 @@ public class StringExercise06 {
             }
         }
 
-        return String.valueOf(result);
+        return result.toString();
     }
 }
