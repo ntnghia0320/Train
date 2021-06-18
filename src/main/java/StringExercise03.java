@@ -4,10 +4,8 @@ public class StringExercise03 {
         int sum = 0;
 
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-
-            if (Character.isDigit(ch)) {
-                temp = temp * 10 + Character.getNumericValue(ch);
+            if (Character.isDigit(str.charAt(i))) {
+                temp = temp * 10 + (str.charAt(i) - '0');
             } else {
                 sum += temp;
                 temp = 0;
