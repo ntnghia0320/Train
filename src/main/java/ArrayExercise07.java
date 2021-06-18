@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class ArrayExercise07 {
-    public int[] findSubArray(int[] arr) {
+    public int[] findLongestSubArray(int[] arr) {
         int lenMax = 1;
         int lenCurrent = 1;
         int maxIndex = 1;
@@ -13,7 +13,7 @@ public class ArrayExercise07 {
                     lenMax = lenCurrent;
                     maxIndex = i + 2;
                 }
-            }else {
+            } else {
                 lenCurrent = 1;
             }
         }
