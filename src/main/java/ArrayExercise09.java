@@ -1,16 +1,17 @@
-import java.util.Arrays;
-
 public class ArrayExercise09 {
-    public int findNumber(int[] arr, int x) {
-        int midIndex = arr.length / 2;
+    public int binarySearch(int[] arr, int x) {
+        int left = 0;
+        int right = arr.length - 1;
 
-        if (midIndex != 0) {
-            if (arr[midIndex] == x) {
+        while (right >= left) {
+            int mid = (right + left) / 2;
+
+            if (arr[mid] == x) {
                 return x;
-            } else if (x > arr[midIndex]) {
-                return findNumber(Arrays.copyOfRange(arr, midIndex, arr.length), x);
+            } else if (arr[mid] > x) {
+                right = mid - 1;
             } else {
-                return findNumber(Arrays.copyOfRange(arr, 0, midIndex), x);
+                left = mid + 1;
             }
         }
 

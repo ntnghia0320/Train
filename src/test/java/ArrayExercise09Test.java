@@ -6,11 +6,11 @@ public class ArrayExercise09Test {
     ArrayExercise09 arrayExercise09 = new ArrayExercise09();
 
     @Test
-    public void test_findNumber(){
-        assertEquals(arrayExercise09.findNumber(new int[]{1,2,3,4,5,6,7,8,9}, 3), 3);
-        assertEquals(arrayExercise09.findNumber(new int[]{1,2,3,4,5,6,7,8,9}, 8), 8);
-        assertEquals(arrayExercise09.findNumber(new int[]{1,2,3,4,5,6,7,8,9}, 11), -1);
-        assertEquals(arrayExercise09.findNumber(new int[]{1}, 1), 0);
-        assertEquals(arrayExercise09.findNumber(new int[]{1}, 2), -1);
+    public void test_binarySearch() {
+        assertEquals(arrayExercise09.binarySearch(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 3), 3);
+        assertEquals(arrayExercise09.binarySearch(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 8), 8);
+        assertEquals(arrayExercise09.binarySearch(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 11), -1);
+        assertEquals(arrayExercise09.binarySearch(new int[]{1}, 1), 1);
+        assertEquals(arrayExercise09.binarySearch(new int[]{1}, 2), -1);
     }
 }
