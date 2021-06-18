@@ -13,5 +13,11 @@ public class ArrayExercise13Test {
                         {7, 8, 9}}, 2, 2), new int[][]{
                         {1, 2},
                         {4, 5}});
+        assertArrayEquals(arrayExercise13.deleteRowColumn(new int[][]{
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}}, 1, 1), new int[][]{
+                {1, 3},
+                {7, 9}});
     }
 }
