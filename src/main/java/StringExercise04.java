@@ -1,7 +1,6 @@
 public class StringExercise04 {
     public boolean isRepeatString(String str) {
         int[] lps = new int[str.length()];
-
         int repeatLength = 0;
         int i = 1;
         lps[0] = 0;
