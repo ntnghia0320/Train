@@ -1,22 +1,19 @@
 public class ArrayExercise13 {
-    public int[][] deleteXY(int[][] matrix, int x, int y) {
-        int m = matrix.length;
-        int n = matrix[0].length;
-        int k = 0;
-        int l = 0;
+    public int[][] deleteRowColumn(int[][] matrix, int columnToDelete, int rowToDelete) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+        int[][] matrixResult = new int[rows - 1][columns - 1];
 
-        int[][] matrixResult = new int[m - 1][n - 1];
-        for (int i = 0; i < m; i++) {
-            if (i == x - 1) continue;
-            for (int j = 0; j < n; j++) {
-                if (j == y - 1) continue;
-                matrixResult[k][l] = matrix[i][j];
+        for (int rowCurrent = 0; rowCurrent < rows; rowCurrent++) {
+            if (rowCurrent == rowToDelete) continue;
+            for (int columnCurrent = 0; columnCurrent < columns; columnCurrent++) {
+                if (columnCurrent == columnToDelete) continue;
 
-                l++;
+                int tempRow = rowCurrent <= rowToDelete ? rowCurrent : rowCurrent - 1;
+                int tempColumn = columnCurrent <= columnToDelete ? columnCurrent : columnCurrent - 1;
+
+                matrixResult[tempRow][tempColumn] = matrix[rowCurrent][columnCurrent];
             }
-
-            l = 0;
-            k++;
         }
 
         return matrixResult;
