@@ -1,19 +1,19 @@
 public class StringExercise03 {
     public int findSumNumber(String str) {
-        StringBuilder temp = new StringBuilder();
+        int temp = 0;
         int sum = 0;
 
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
 
             if (Character.isDigit(ch)) {
-                temp.append(ch);
-            } else if (temp.length() > 0) {
-                sum += Integer.parseInt(String.valueOf(temp));
-                temp.setLength(0);
+                temp = temp * 10 + Character.getNumericValue(ch);
+            } else {
+                sum += temp;
+                temp = 0;
             }
         }
 
-        return temp.length() > 0 ? sum + Integer.parseInt(String.valueOf(temp)) : sum;
+        return sum + temp;
     }
 }
