@@ -1,35 +1,28 @@
 public class StringExercise04 {
-    static void computeLPSArray(String str, int M, int[] lps) {
-        int len = 0;
-        int i;
+    public boolean isRepeatString(String str) {
+        int[] lps = new int[str.length()];
 
+        int repeatLength = 0;
+        int i = 1;
         lps[0] = 0;
-        i = 1;
 
-        while (i < M) {
-            if (str.charAt(i) == str.charAt(len)) {
-                len++;
-                lps[i] = len;
+        while (i < str.length()) {
+            if (str.charAt(i) == str.charAt(repeatLength)) {
+                repeatLength++;
+                lps[i] = repeatLength;
                 i++;
             } else {
-                if (len != 0) {
-                    len = lps[len - 1];
+                if (repeatLength != 0) {
+                    repeatLength = lps[repeatLength - 1];
                 } else {
                     lps[i] = 0;
                     i++;
                 }
             }
         }
-    }
 
-    public boolean isRepeatString(String str) {
-        int n = str.length();
-        int[] lps = new int[n];
+        int len = lps[str.length() - 1];
 
-        computeLPSArray(str, n, lps);
-
-        int len = lps[n - 1];
-
-        return len > 0 && n % (n - len) == 0;
+        return len > 0 && str.length() % (str.length() - len) == 0;
     }
 }
