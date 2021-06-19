@@ -1,45 +1,26 @@
 public class StringExercise07 {
     public String extractString(String str) {
-        int n = str.length();
-        int number;
-        char charRepeated = ' ';
-        char currentChar;
-        StringBuilder tempNumber = new StringBuilder();
+        int numberLevel = 1;
+        int number = 0;
         StringBuilder result = new StringBuilder();
 
-        for (int i = 1; i < n; i++) {
-            currentChar = str.charAt(i);
+        for (int i = str.length() - 1; i >= 0; i--) {
+            char ch = str.charAt(i);
 
-            if (Character.isDigit(currentChar)) {
-                tempNumber.append(currentChar);
-
-                if (charRepeated == ' ') {
-                    charRepeated = str.charAt(i - 1);
-                }
-            } else if (tempNumber.length() > 0) {
-                number = Integer.parseInt(String.valueOf(tempNumber));
-
-                for (int j = 0; j < number; j++) {
-                    result.append(charRepeated);
-                }
-
-                charRepeated = ' ';
-                tempNumber.setLength(0);
+            if (Character.isDigit(ch)) {
+                number += Character.getNumericValue(ch) * numberLevel;
+                numberLevel *= 10;
             } else {
-                result.append(str.charAt(i - 1));
+                for (int j = 0; j < number - 1; j++) {
+                    result.append(ch);
+                }
+
+                result.append(ch);
+                numberLevel = 1;
+                number = 0;
             }
         }
 
-        if (tempNumber.length() > 0) {
-            number = Integer.parseInt(String.valueOf(tempNumber));
-
-            for (int j = 0; j < number; j++) {
-                result.append(charRepeated);
-            }
-        } else {
-            result.append(str.charAt(n - 1));
-        }
-
-        return result.toString();
+        return result.reverse().toString();
     }
 }
