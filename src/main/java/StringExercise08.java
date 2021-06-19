@@ -1,17 +1,11 @@
 public class StringExercise08 {
     public boolean checkBarcode(String str) {
-        int n = str.length();
-        int sumEven = 0;
-        int sumOdd = 0;
+        int sum = 0;
 
-        for (int i = 0; i < n; i++) {
-            if (i % 2 == 0) {
-                sumEven += str.charAt(i) - '0';
-            } else {
-                sumOdd += str.charAt(i) - '0';
-            }
+        for (int i = 0; i < str.length(); i++) {
+            sum += i % 2 == 0 ? str.charAt(i) - '0' : (str.charAt(i) - '0') * 3;
         }
 
-        return (sumEven + 3 * sumOdd) % 10 == 0;
+        return sum % 10 == 0;
     }
 }
