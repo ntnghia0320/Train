@@ -8,7 +8,7 @@ public class StringExercise07 {
             char ch = str.charAt(i);
 
             if (Character.isDigit(ch)) {
-                number += Character.getNumericValue(ch) * numberLevel;
+                number += (ch - '0') * numberLevel;
                 numberLevel *= 10;
             } else {
                 for (int j = 0; j < number - 1; j++) {
