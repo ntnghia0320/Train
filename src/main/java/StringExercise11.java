@@ -1,34 +1,32 @@
 public class StringExercise11 {
-    public String minusStringNumber(String strNum1, String strNum2) {
-        int surplus = 0;
-        int k = strNum1.length() - strNum2.length();
-        StringBuilder result = new StringBuilder();
+    int digitFromRight(String str, int position) {
+        if (position >= str.length()) return 0;
+        return str.charAt(str.length() - 1 - position) - '0';
+    }
 
-        for (int i = strNum1.length() - 1; i >= 0; i--) {
-            int sum;
-            if (k < 0) {
-                sum = i >= -k ? (strNum1.charAt(i + k) - '0') - (strNum2.charAt(i+k) - '0') : -(strNum2.charAt(i) - '0');
-            } else {
-                sum = i >= k ? (strNum1.charAt(i) - '0') - (strNum2.charAt(i-k) - '0') : strNum1.charAt(i) - '0';
-            }
+    public int minusStringNumber(String strNum1, String strNum2) {
+        int sign1 = 1;
+        int sign2 = 1;
+        int level = 1;
+        int sum = 0;
 
-            if (surplus < 0) {
-                sum += surplus;
-                surplus = 0;
-            }
-
-            if (sum > 9) {
-                surplus = sum / 10;
-                sum = sum % 10;
-            }
-
-            result.append(sum);
+        if (strNum1.charAt(0) == '-') {
+            strNum1 = strNum1.substring(1);
+            sign1 = -1;
         }
 
-        if (surplus > 0) {
-            result.append(surplus);
+        if (strNum2.charAt(0) == '-') {
+            strNum2 = strNum2.substring(1);
+            sign2 = -1;
         }
 
-        return result.reverse().toString();
+        int limit = Math.max(strNum1.length(), strNum2.length());
+
+        for (int i = 0; i < limit; i++) {
+            sum += (sign1 * digitFromRight(strNum1, i) - sign2 * digitFromRight(strNum2, i)) * level;
+            level *= 10;
+        }
+
+        return sum;
     }
 }
