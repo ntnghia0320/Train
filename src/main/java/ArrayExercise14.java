@@ -1,40 +1,34 @@
 public class ArrayExercise14 {
-    private static void getCofactor(int[][] mat, int[][] temp, int q, int n) {
-        int i = 0, j = 0;
+    private static int[][] getCofactor(int[][] source, int columnToRemove) {
+        int length = source.length;
+        int[][] temp = new int[length - 1][length - 1];
 
-        for (int row = 0; row < n; row++) {
-            for (int col = 0; col < n; col++) {
-                if (row != 0 && col != q) {
-                    temp[i][j++] = mat[row][col];
-                    if (j == n - 1) {
-                        j = 0;
-                        i++;
-                    }
+        for (int row = 1; row < length; row++) {
+            for (int col = 0; col < length; col++) {
+                if (col < columnToRemove) {
+                    temp[row - 1][col] = source[row][col];
+                } else if (col > columnToRemove) {
+                    temp[row - 1][col - 1] = source[row][col];
                 }
             }
         }
-    }
 
-    private static int determinantOfMatrix(int[][] mat, int n) {
-        if (n == 1) return mat[0][0];
-
-        int D = 0;
-        int[][] temp = new int[n][n];
-        int sign = 1;
-
-        for (int f = 0; f < n; f++) {
-            getCofactor(mat, temp, f, n);
-            D += sign * mat[0][f] * determinantOfMatrix(temp, n - 1);
-            sign = -sign;
-        }
-
-        return D;
+        return temp;
     }
 
     public int calculateDeterminant(int[][] matrix) {
-        int n = matrix.length;
+        if (matrix.length == 1) return matrix[0][0];
 
-        return determinantOfMatrix(matrix, n);
+        int determinant = 0;
+        int sign = 1;
+
+        for (int column = 0; column < matrix.length; column++) {
+            int[][] temp = getCofactor(matrix, column);
+            determinant += sign * matrix[0][column] * calculateDeterminant(temp);
+            sign = -sign;
+        }
+
+        return determinant;
     }
 }
 
