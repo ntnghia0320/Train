@@ -8,6 +8,8 @@ public class StringExercise11Test {
     @Test
     public void test_minusStringNumber() {
         assertEquals(stringExercise11.minusStringNumber("789", "456"), 333);
+        assertEquals(stringExercise11.minusStringNumber("789", "-456"), 1245);
+        assertEquals(stringExercise11.minusStringNumber("-789", "-456"), -333);
         assertEquals(stringExercise11.minusStringNumber("2789", "456"), 2333);
         assertEquals(stringExercise11.minusStringNumber("456", "2789"), -2333);
     }
