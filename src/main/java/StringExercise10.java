@@ -5,10 +5,6 @@ public class StringExercise10 {
     }
 
     public int subStringNumber(String strNum1, String strNum2) {
-        if (strNum1.length() < strNum2.length()) {
-            return subStringNumber(strNum2, strNum1);
-        }
-
         int sign1 = 1;
         int sign2 = 1;
         int level = 1;
@@ -24,9 +20,10 @@ public class StringExercise10 {
             sign2 = -1;
         }
 
-        for (int i = 0; i < strNum1.length(); i++) {
+        int maxLength = Math.max(strNum1.length(), strNum2.length());
+
+        for (int i = 0; i < maxLength; i++) {
             sum += (sign1 * digitFromRight(strNum1, i) + sign2 * digitFromRight(strNum2, i)) * level;
-            System.out.println(strNum1.length());
             level *= 10;
         }
 
