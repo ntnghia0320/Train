@@ -20,9 +20,9 @@ public class StringExercise11 {
             sign2 = -1;
         }
 
-        int limit = Math.max(strNum1.length(), strNum2.length());
+        int maxLength = Math.max(strNum1.length(), strNum2.length());
 
-        for (int i = 0; i < limit; i++) {
+        for (int i = 0; i < maxLength; i++) {
             sum += (sign1 * digitFromRight(strNum1, i) - sign2 * digitFromRight(strNum2, i)) * level;
             level *= 10;
         }
