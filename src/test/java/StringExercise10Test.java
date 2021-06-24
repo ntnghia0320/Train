@@ -7,12 +7,9 @@ public class StringExercise10Test {
 
     @Test
     public void test_subStringNumber() {
-        assertEquals(stringExercise10.subStringNumber("789", "456"), 1245);
-        assertEquals(stringExercise10.subStringNumber("789", "-456"), 333);
-        assertEquals(stringExercise10.subStringNumber("7", "-15"), -8);
-        assertEquals(stringExercise10.subStringNumber("1", "-9"), -8);
-        assertEquals(stringExercise10.subStringNumber("-9", "100"), 91);
-        assertEquals(stringExercise10.subStringNumber("2789", "456"), 3245);
-        assertEquals(stringExercise10.subStringNumber("456", "2789"), 3245);
+        assertEquals(stringExercise10.subStringNumber("789", "456"), "1245");
+        assertEquals(stringExercise10.subStringNumber("9", "100"), "109");
+        assertEquals(stringExercise10.subStringNumber("2789", "456"), "3245");
+        assertEquals(stringExercise10.subStringNumber("456", "2789"), "3245");
     }
 }
