@@ -1,5 +1,5 @@
-import OOPExercise01.Student;
-import OOPExercise01.StudentController;
+package OOPExercise01;
+
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
