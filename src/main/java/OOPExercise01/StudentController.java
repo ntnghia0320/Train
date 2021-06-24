@@ -8,18 +8,26 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class StudentController {
-    List<Student> students = new ArrayList<>();
+    private static final List<Student> students = new ArrayList<>(Arrays.asList(
+            new Student.Builder().setId(1).setFirstName("Nguyen").setLastName("A1").
+                    setBirthday("2000").setClassName("a1").setAddress("abc").build(),
+            new Student.Builder().setId(2).setFirstName("Nguyen").setLastName("A2").setClassName("a2").
+                    setBirthday("2000").setClassName("a2").setAddress("abc").build(),
+            new Student.Builder().setId(3).setFirstName("Nguyen").setLastName("A3").setClassName("a3").
+                    setBirthday("2000").setClassName("a3").setAddress("abc").build()
+    ));
 
     public void add(Student student) {
         students.add(student);
     }
 
-    public void delete(Student student) {
-        students.remove(student);
+    public void delete(int id) {
+        students.remove(getById(id));
     }
 
     public void saveToFile(String path) throws IOException {
@@ -38,8 +46,12 @@ public class StudentController {
         }.getType());
         scan.close();
 
-        this.students.clear();
-        this.students.addAll(students);
+        StudentController.students.clear();
+        StudentController.students.addAll(students);
+    }
+
+    public List<Student> getAll() {
+        return students;
     }
 
     public Student getById(int id) {
@@ -64,7 +76,7 @@ public class StudentController {
         List<Student> listStudentFoundByClassName = new ArrayList<>();
 
         for (Student student : students) {
-            if ((student.getClassName()).equals(className)) listStudentFoundByClassName.add(student);
+            if (student.getClassName().equals(className)) listStudentFoundByClassName.add(student);
         }
 
         return listStudentFoundByClassName;

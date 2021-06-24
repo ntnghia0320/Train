@@ -29,17 +29,10 @@ public class Student {
         return lastName;
     }
 
-    public String getBirthday() {
-        return birthday;
-    }
-
     public String getClassName() {
         return className;
     }
 
-    public String getAddress() {
-        return address;
-    }
 
     public static class Builder {
         private int id;
