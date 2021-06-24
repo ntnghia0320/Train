@@ -4,29 +4,28 @@ public class StringExercise11 {
         return str.charAt(str.length() - 1 - position) - '0';
     }
 
-    public int minusStringNumber(String strNum1, String strNum2) {
-        int sign1 = 1;
-        int sign2 = 1;
-        int level = 1;
-        int sum = 0;
-
-        if (strNum1.charAt(0) == '-') {
-            strNum1 = strNum1.substring(1);
-            sign1 = -1;
+    public String minusStringNumber(String strNum1, String strNum2) {
+        if ((strNum1.length() == strNum2.length() && strNum1.compareTo(strNum2) < 0) ||
+                strNum1.length() < strNum2.length()) {
+            return '-' + minusStringNumber(strNum2, strNum1);
         }
 
-        if (strNum2.charAt(0) == '-') {
-            strNum2 = strNum2.substring(1);
-            sign2 = -1;
+        StringBuilder result = new StringBuilder();
+        int memory = 0;
+
+        for (int i = 0; i < strNum1.length(); i++) {
+            int minus = digitFromRight(strNum1, i) - digitFromRight(strNum2, i) - memory;
+
+            if (minus < 0) {
+                minus += 10;
+                memory = 1;
+            } else {
+                memory = 0;
+            }
+
+            result.insert(0, minus);
         }
 
-        int maxLength = Math.max(strNum1.length(), strNum2.length());
-
-        for (int i = 0; i < maxLength; i++) {
-            sum += (sign1 * digitFromRight(strNum1, i) - sign2 * digitFromRight(strNum2, i)) * level;
-            level *= 10;
-        }
-
-        return sum;
+        return result.toString();
     }
 }
