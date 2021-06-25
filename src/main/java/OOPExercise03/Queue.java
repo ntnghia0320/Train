@@ -1,32 +1,28 @@
 package OOPExercise03;
 
+import java.util.ArrayList;
+
 public class Queue {
-    private final int[] elements = new int[1000];
-    private int size = 0;
-    private int front = 0;
-    private int rear = 999;
+    private final ArrayList<Integer> elements = new ArrayList<>();
 
     public boolean isEmpty() {
-        return size == 0;
+        return elements.isEmpty();
     }
 
     public void enqueue(int item) {
-        rear = (rear + 1) % 1000;
-        elements[rear] = item;
-        size++;
+        elements.add(item);
     }
 
     public int peek() {
         if (isEmpty()) throw new RuntimeException("Queue Empty");
-        return this.elements[front];
+        return this.elements.get(0);
     }
 
     public int dequeue() {
         if (isEmpty()) throw new RuntimeException("Queue Empty");
 
-        int item = elements[front];
-        front = (front + 1) % 1000;
-        size--;
+        int item = elements.get(0);
+        elements.remove(0);
         return item;
     }
 }

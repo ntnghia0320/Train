@@ -38,6 +38,7 @@ class OOPExercise03Test {
             @BeforeEach
             void innit() {
                 queue.enqueue(1);
+                queue.enqueue(2);
             }
 
             @Test
@@ -46,15 +47,24 @@ class OOPExercise03Test {
             }
 
             @Test
-            void test_peek() {
-                assertEquals(1, queue.peek());
-                assertFalse(queue.isEmpty());
-            }
-
-            @Test
             void test_dequeue() {
                 assertEquals(1, queue.dequeue());
+                assertEquals(2, queue.dequeue());
                 assertTrue(queue.isEmpty());
+            }
+
+            @Nested
+            class TestPeek {
+                @BeforeEach
+                void innit() {
+                    queue.enqueue(1);
+                }
+
+                @Test
+                void test_peek() {
+                    assertEquals(1, queue.peek());
+                    assertFalse(queue.isEmpty());
+                }
             }
         }
     }
