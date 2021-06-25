@@ -12,7 +12,7 @@ class OOPExercise02Test {
     class WhenNew {
 
         @BeforeEach
-        void innit() {
+        void init() {
             stack = new Stack();
         }
 
@@ -35,7 +35,7 @@ class OOPExercise02Test {
         class AfterPushing {
 
             @BeforeEach
-            void push() {
+            void init() {
                 stack.push(1);
                 stack.push(2);
             }
@@ -55,7 +55,7 @@ class OOPExercise02Test {
             @Nested
             class TestPeek {
                 @BeforeEach
-                void innit() {
+                void init() {
                     stack.push(1);
                 }
 
