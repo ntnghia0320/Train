@@ -17,12 +17,12 @@ public class Queue {
     }
 
     public int peek() {
-        if (isEmpty()) throw new RuntimeException("Queue Full");
+        if (isEmpty()) throw new RuntimeException("Queue Empty");
         return this.elements[front];
     }
 
     public int poll() {
-        if (isEmpty()) throw new RuntimeException("Queue Full");
+        if (isEmpty()) throw new RuntimeException("Queue Empty");
 
         int item = elements[front];
         front = (front + 1) % 1000;
