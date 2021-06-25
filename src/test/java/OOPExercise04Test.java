@@ -37,6 +37,7 @@ class OOPExercise04Test {
             @BeforeEach
             void innit() {
                 stack.push("ele1");
+                stack.push("ele2");
             }
 
             @Test
@@ -45,15 +46,24 @@ class OOPExercise04Test {
             }
 
             @Test
-            void test_peek() {
-                assertEquals("ele1", stack.peek());
-                assertFalse(stack.isEmpty());
-            }
-
-            @Test
             void test_pop() {
+                assertEquals("ele2", stack.pop());
                 assertEquals("ele1", stack.pop());
                 assertTrue(stack.isEmpty());
+            }
+
+            @Nested
+            class TestPeek {
+                @BeforeEach
+                void init() {
+                    stack.push("ele1");
+                }
+
+                @Test
+                void test_peek() {
+                    assertEquals("ele1", stack.peek());
+                    assertFalse(stack.isEmpty());
+                }
             }
         }
     }
