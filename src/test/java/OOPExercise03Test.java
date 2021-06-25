@@ -13,7 +13,7 @@ class OOPExercise03Test {
     class WhenNew {
 
         @BeforeEach
-        void innit() {
+        void init() {
             queue = new Queue();
         }
 
@@ -56,7 +56,7 @@ class OOPExercise03Test {
             @Nested
             class TestPeek {
                 @BeforeEach
-                void innit() {
+                void init() {
                     queue.enqueue(1);
                 }
 
