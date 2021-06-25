@@ -99,7 +99,7 @@ class OOPExercise01Test {
             void setUp() throws IOException {
                 studentController.saveToFile();
                 tempFile = new File("./src/temp_data.json");
-                Files.copy(Paths.get("./src/temp_data.json"), Paths.get("./src/temp_data.json"));
+                Files.copy(Paths.get("./src/data.json"), Paths.get("./src/temp_data.json"));
                 studentsBeforeLoad = studentController.getAll();
             }
 
