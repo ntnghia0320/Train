@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -103,8 +104,8 @@ class OOPExercise01Test {
 
             @AfterAll
             static void afterEach() throws IOException {
-                Files.deleteIfExists(Path.of("./src/temp_data.json"));
-                Files.deleteIfExists(Path.of("./src/data.json"));
+//                Files.deleteIfExists(Path.of("./src/temp_data.json"));
+                Files.deleteIfExists(Paths.get("./src/temp_data.json"));
             }
 
             @BeforeEach
