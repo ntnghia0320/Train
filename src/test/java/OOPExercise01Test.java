@@ -23,7 +23,7 @@ class OOPExercise01Test {
     List<Student> studentsFoundByClassNameExpect;
 
     @BeforeEach
-    void innit() {
+    void init() {
         studentController = new StudentController();
         studentToAdd = new Student.Builder()
                 .setId(1)
@@ -43,7 +43,7 @@ class OOPExercise01Test {
     class TestStudentController {
 
         @BeforeEach
-        void innit() {
+        void init() {
             studentController.add(studentToAdd);
         }
 
