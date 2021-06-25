@@ -1,27 +1,30 @@
 package OPPExcercise02;
 
+import java.util.ArrayList;
+
 public class Stack {
-    private final int[] elements = new int[1000];
-    private int top = -1;
+    private final ArrayList<Integer> elements = new ArrayList<>();
 
     public boolean isEmpty() {
-        return top < 0;
+        return elements.isEmpty();
     }
 
     public void push(int element) {
-            elements[++top] = element;
+        elements.add(element);
     }
 
     public int pop() {
-        if (top >= 0) {
-            return elements[top--];
+        if (!elements.isEmpty()) {
+            int result = elements.get(elements.size() - 1);
+            elements.remove(elements.size() - 1);
+            return result;
         }
         throw new RuntimeException("Stack Underflow");
     }
 
     public int peek() {
-        if (top >= 0) {
-            return elements[top];
+        if (!elements.isEmpty()) {
+            return elements.get(elements.size() - 1);
         }
         throw new RuntimeException("Stack Underflow");
     }

@@ -37,6 +37,7 @@ class OOPExercise02Test {
             @BeforeEach
             void test_push() {
                 stack.push(1);
+                stack.push(2);
             }
 
             @Test
@@ -46,13 +47,14 @@ class OOPExercise02Test {
 
             @Test
             void test_pop() {
+                assertEquals(2, stack.pop());
                 assertEquals(1, stack.pop());
                 assertTrue(stack.isEmpty());
             }
 
             @Test
             void test_peek() {
-                assertEquals(1, stack.peek());
+                assertEquals(2, stack.peek());
                 assertFalse(stack.isEmpty());
             }
         }
