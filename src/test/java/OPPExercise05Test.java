@@ -12,7 +12,7 @@ public class OPPExercise05Test<T> {
     class WhenNew {
 
         @BeforeEach
-        void innit() {
+        void init() {
             queue = new Queue<>();
         }
 
@@ -35,8 +35,9 @@ public class OPPExercise05Test<T> {
         class AfterAdd {
 
             @BeforeEach
-            void innit() {
+            void init() {
                 queue.enqueue("1");
+                queue.enqueue("2");
             }
 
             @Test
@@ -45,15 +46,24 @@ public class OPPExercise05Test<T> {
             }
 
             @Test
-            void test_peek() {
-                assertEquals("1", queue.peek());
-                assertFalse(queue.isEmpty());
-            }
-
-            @Test
             void test_dequeue() {
                 assertEquals("1", queue.dequeue());
+                assertEquals("2", queue.dequeue());
                 assertTrue(queue.isEmpty());
+            }
+
+            @Nested
+            class TestPeek {
+                @BeforeEach
+                void init() {
+                    queue.enqueue("1");
+                }
+
+                @Test
+                void test_peek() {
+                    assertEquals("1", queue.peek());
+                    assertFalse(queue.isEmpty());
+                }
             }
         }
     }
