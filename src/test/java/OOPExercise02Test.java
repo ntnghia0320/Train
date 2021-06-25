@@ -52,10 +52,18 @@ class OOPExercise02Test {
                 assertTrue(stack.isEmpty());
             }
 
-            @Test
-            void test_peek() {
-                assertEquals(2, stack.peek());
-                assertFalse(stack.isEmpty());
+            @Nested
+            class TestPeek {
+                @BeforeEach
+                void innit() {
+                    stack.push(1);
+                }
+
+                @Test
+                void test_peek() {
+                    assertEquals(1, stack.peek());
+                    assertFalse(stack.isEmpty());
+                }
             }
         }
     }
