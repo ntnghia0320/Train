@@ -1,30 +1,60 @@
-import java.util.ArrayList;
+import OPPExercise05.Queue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OPPExercise05Test<T> {
-    private final ArrayList<T> elements = new ArrayList<>();
-    private int size = 0;
-    private int front = 0;
-    private int rear = -1;
+    Queue<String> queue;
 
-    public boolean isEmpty() {
-        return elements.isEmpty();
-    }
+    @Nested
+    class WhenNew {
 
-    public void enqueue(T item) {
-        elements.add(++rear, item);
-    }
+        @BeforeEach
+        void innit() {
+            queue = new Queue<>();
+        }
 
-    public int peek() {
-        if (isEmpty()) throw new RuntimeException("Queue Empty");
-        return this.elements.get(front);
-    }
+        @Test
+        void test_isEmpty() {
+            assertTrue(queue.isEmpty());
+        }
 
-    public int dequeue() {
-        if (isEmpty()) throw new RuntimeException("Queue Empty");
+        @Test
+        void test_dequeue() {
+            assertThrows(RuntimeException.class, queue::dequeue);
+        }
 
-        int item = elements[front];
-        front = (front + 1) % 1000;
-        size--;
-        return item;
+        @Test
+        void test_peek() {
+            assertThrows(RuntimeException.class, queue::peek);
+        }
+
+        @Nested
+        class AfterAdd {
+
+            @BeforeEach
+            void innit() {
+                queue.enqueue("1");
+            }
+
+            @Test
+            void test_isEmpty() {
+                assertFalse(queue.isEmpty());
+            }
+
+            @Test
+            void test_peek() {
+                assertEquals("1", queue.peek());
+                assertFalse(queue.isEmpty());
+            }
+
+            @Test
+            void test_dequeue() {
+                assertEquals("1", queue.dequeue());
+                assertTrue(queue.isEmpty());
+            }
+        }
     }
 }
