@@ -12,7 +12,7 @@ class OOPExercise04Test {
     class WhenNew {
 
         @BeforeEach
-        void innit() {
+        void init() {
             stack = new Stack<>();
         }
 
@@ -35,7 +35,7 @@ class OOPExercise04Test {
         class AfterPushing {
 
             @BeforeEach
-            void innit() {
+            void init() {
                 stack.push("ele1");
                 stack.push("ele2");
             }
