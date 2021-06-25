@@ -13,7 +13,7 @@ class OOPExercise04Test {
 
         @BeforeEach
         void innit() {
-            stack = new Stack<String>(3);
+            stack = new Stack<>();
         }
 
         @Test
@@ -35,7 +35,7 @@ class OOPExercise04Test {
         class AfterPushing {
 
             @BeforeEach
-            void push() {
+            void innit() {
                 stack.push("ele1");
             }
 
@@ -45,15 +45,15 @@ class OOPExercise04Test {
             }
 
             @Test
-            void test_pop() {
-                assertEquals("ele1", stack.pop());
-                assertTrue(stack.isEmpty());
-            }
-
-            @Test
             void test_peek() {
                 assertEquals("ele1", stack.peek());
                 assertFalse(stack.isEmpty());
+            }
+
+            @Test
+            void test_pop() {
+                assertEquals("ele1", stack.pop());
+                assertTrue(stack.isEmpty());
             }
         }
     }
