@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -86,7 +85,7 @@ class OOPExercise01Test {
         @Test
         void test_saveToFile() throws IOException {
             studentController.saveToFile();
-            assertTrue(Files.exists(Path.of("./src/data.json")));
+            assertTrue(Files.exists(Paths.get("./src/data.json")));
             Files.deleteIfExists(Paths.get("./src/data.json"));
         }
 
