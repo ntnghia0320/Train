@@ -76,11 +76,6 @@ public class Student {
             return new Student(id, firstName, lastName, birthday, className, address);
         }
     }
-
-    @Override
-    public String toString() {
-        return id + "" + firstName + "" + lastName + "" + birthday + "" + className + "" + address;
-    }
 }
 
 
