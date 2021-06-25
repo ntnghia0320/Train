@@ -1,39 +1,30 @@
 package OPPExcercise02;
 
 public class Stack {
-    int top;
-    int[] a = new int[1000];
-
-    public Stack() {
-        top = -1;
-    }
+    private final int[] elements = new int[1000];
+    private int top = -1;
 
     public boolean isEmpty() {
-        return (top < 0);
+        return top < 0;
     }
 
-    public boolean push(int x) {
-        if (top >= (1000 - 1)) {
-            return false;
-        } else {
-            a[++top] = x;
-            return true;
+    public void push(int element) {
+        if (top < elements.length) {
+            elements[++top] = element;
         }
     }
 
     public int pop() {
-        if (top < 0) {
-            return 0;
-        } else {
-            return a[top--];
+        if (top >= 0) {
+            return elements[top--];
         }
+        throw new RuntimeException("Stack Underflow");
     }
 
     public int peek() {
-        if (top < 0) {
-            return 0;
-        } else {
-            return a[top];
+        if (top >= 0) {
+            return elements[top];
         }
+        throw new RuntimeException("Stack Underflow");
     }
 }
