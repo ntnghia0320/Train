@@ -36,7 +36,7 @@ class OOPExercise03Test {
         class AfterAdd {
 
             @BeforeEach
-            void innit() {
+            void init() {
                 queue.enqueue(1);
                 queue.enqueue(2);
             }
