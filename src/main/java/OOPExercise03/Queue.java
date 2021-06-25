@@ -10,7 +10,7 @@ public class Queue {
         return size == 0;
     }
 
-    public void add(int item) {
+    public void enqueue(int item) {
         rear = (rear + 1) % 1000;
         elements[rear] = item;
         size++;
@@ -21,7 +21,7 @@ public class Queue {
         return this.elements[front];
     }
 
-    public int poll() {
+    public int dequeue() {
         if (isEmpty()) throw new RuntimeException("Queue Empty");
 
         int item = elements[front];

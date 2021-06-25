@@ -23,8 +23,8 @@ class OOPExercise03Test {
         }
 
         @Test
-        void test_poll() {
-            assertThrows(RuntimeException.class, queue::poll);
+        void test_dequeue() {
+            assertThrows(RuntimeException.class, queue::dequeue);
         }
 
         @Test
@@ -37,7 +37,7 @@ class OOPExercise03Test {
 
             @BeforeEach
             void innit() {
-                queue.add(1);
+                queue.enqueue(1);
             }
 
             @Test
@@ -52,8 +52,8 @@ class OOPExercise03Test {
             }
 
             @Test
-            void test_poll() {
-                assertEquals(1, queue.poll());
+            void test_dequeue() {
+                assertEquals(1, queue.dequeue());
                 assertTrue(queue.isEmpty());
             }
         }
