@@ -35,7 +35,7 @@ class OOPExercise02Test {
         class AfterPushing {
 
             @BeforeEach
-            void test_push() {
+            void push() {
                 stack.push(1);
             }
 
