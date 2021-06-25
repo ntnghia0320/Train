@@ -1,12 +1,10 @@
 import OOPExercise01.Student;
 import OOPExercise01.StudentController;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -44,11 +42,6 @@ class OOPExercise01Test {
 
     @Nested
     class TestStudentController {
-
-        @AfterAll
-        static void afterAll() throws IOException {
-            Files.deleteIfExists(Path.of("./src/data.json"));
-        }
 
         @BeforeEach
         void innit() {
@@ -94,6 +87,7 @@ class OOPExercise01Test {
         void test_saveToFile() throws IOException {
             studentController.saveToFile();
             assertTrue(Files.exists(Path.of("./src/data.json")));
+            Files.deleteIfExists(Paths.get("./src/data.json"));
         }
 
         @Nested
@@ -102,25 +96,21 @@ class OOPExercise01Test {
             List<Student> studentsBeforeLoad;
             List<Student> studentsAfterLoad;
 
-            @AfterAll
-            static void afterEach() throws IOException {
-//                Files.deleteIfExists(Path.of("./src/temp_data.json"));
-                Files.deleteIfExists(Paths.get("./src/temp_data.json"));
-            }
-
             @BeforeEach
             void setUp() throws IOException {
                 studentController.saveToFile();
                 tempFile = new File("./src/temp_data.json");
-                Files.copy(Path.of("./src/data.json"), Path.of("./src/temp_data.json"));
+                Files.copy(Paths.get("./src/temp_data.json"), Paths.get("./src/temp_data.json"));
                 studentsBeforeLoad = studentController.getAll();
             }
 
             @Test
-            void test_loadFromFile() throws FileNotFoundException {
+            void test_loadFromFile() throws IOException {
                 studentController.loadFromFile();
                 studentsAfterLoad = studentController.getAll();
                 assertEquals(studentsBeforeLoad, studentsAfterLoad);
+                Files.deleteIfExists(Paths.get("./src/data.json"));
+                Files.deleteIfExists(Paths.get("./src/temp_data.json"));
             }
         }
     }
