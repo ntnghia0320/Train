@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Stack {
     private void ensureNotEmpty() {
-        if (isEmpty()) throw new RuntimeException("Queue Empty");
+        if (isEmpty()) throw new RuntimeException("Stack Empty");
     }
 
     private final ArrayList<Integer> elements = new ArrayList<>();
