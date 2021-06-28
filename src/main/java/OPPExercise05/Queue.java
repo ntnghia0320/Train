@@ -3,6 +3,10 @@ package OPPExercise05;
 import java.util.ArrayList;
 
 public class Queue<T> {
+    private void ensureNotEmpty() {
+        if (isEmpty()) throw new RuntimeException("Queue Empty");
+    }
+
     private final ArrayList<T> elements = new ArrayList<>();
 
     public boolean isEmpty() {
@@ -14,12 +18,12 @@ public class Queue<T> {
     }
 
     public T peek() {
-        if (isEmpty()) throw new RuntimeException("Queue Empty");
+        ensureNotEmpty();
         return this.elements.get(0);
     }
 
     public T dequeue() {
-        if (isEmpty()) throw new RuntimeException("Queue Empty");
+        ensureNotEmpty();
 
         T item = elements.get(0);
         elements.remove(0);
