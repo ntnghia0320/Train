@@ -3,6 +3,10 @@ package OOPExercise04;
 import java.util.ArrayList;
 
 public class Stack<T> {
+    private void ensureNotEmpty() {
+        if (isEmpty()) throw new RuntimeException("Stack Empty");
+    }
+
     private final ArrayList<T> elements = new ArrayList<>();
 
     private int top = -1;
@@ -16,16 +20,14 @@ public class Stack<T> {
     }
 
     public T peek() {
-        if (top >= 0) {
-            return elements.get(top);
-        }
-        throw new RuntimeException("Stack Underflow");
+        ensureNotEmpty();
+
+        return elements.get(top);
     }
 
     public T pop() {
-        if (top >= 0) {
-            return elements.get(top--);
-        }
-        throw new RuntimeException("Stack Underflow");
+        ensureNotEmpty();
+        return elements.get(top--);
+
     }
 }
