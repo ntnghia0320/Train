@@ -3,6 +3,10 @@ package OPPExcercise02;
 import java.util.ArrayList;
 
 public class Stack {
+    private void ensureNotEmpty() {
+        if (isEmpty()) throw new RuntimeException("Queue Empty");
+    }
+
     private final ArrayList<Integer> elements = new ArrayList<>();
 
     public boolean isEmpty() {
@@ -14,18 +18,15 @@ public class Stack {
     }
 
     public int pop() {
-        if (!elements.isEmpty()) {
-            int result = elements.get(elements.size() - 1);
-            elements.remove(elements.size() - 1);
-            return result;
-        }
-        throw new RuntimeException("Stack Underflow");
+        ensureNotEmpty();
+
+        int result = elements.get(elements.size() - 1);
+        elements.remove(elements.size() - 1);
+        return result;
     }
 
     public int peek() {
-        if (!elements.isEmpty()) {
-            return elements.get(elements.size() - 1);
-        }
-        throw new RuntimeException("Stack Underflow");
+        ensureNotEmpty();
+        return elements.get(elements.size() - 1);
     }
 }
